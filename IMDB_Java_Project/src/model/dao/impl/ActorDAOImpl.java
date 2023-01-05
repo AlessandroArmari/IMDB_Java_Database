@@ -54,11 +54,11 @@ public class ActorDAOImpl implements ActorDAO {
 
             preparedStatement.setString(1, newActor.getName());
             preparedStatement.setBoolean(2, newActor.isOscarWinner());
-            preparedStatement.setInt(2, newActor.getId());
+            preparedStatement.setInt(3, newActor.getId());
 
             int rowUpdated = preparedStatement.executeUpdate();
 
-            System.out.println("LOG: You have updated: " + rowUpdated + "correctly!");
+            System.out.println("LOG: You have updated: " + rowUpdated + " correctly!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -79,7 +79,7 @@ public class ActorDAOImpl implements ActorDAO {
 
             int rowUpdated = preparedStatement.executeUpdate();
 
-            System.out.println("LOG: You have updated: " + rowUpdated + "using 'by_name method' correctly!");
+            System.out.println("LOG: You have updated: " + rowUpdated + " using 'by_name method' correctly!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -120,7 +120,7 @@ public class ActorDAOImpl implements ActorDAO {
 
             int rowDeleted = preparedStatement.executeUpdate();
 
-            System.out.println("LOG: All actors deleted");
+            System.out.println("LOG: All " + rowDeleted + " actors deleted");
         } catch (SQLException e) {
             e.printStackTrace();
         }

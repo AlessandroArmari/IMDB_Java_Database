@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +55,7 @@ public class MovieDAOImpl implements MovieDAO {
 
             int rowUpdate = preparedStatement.executeUpdate();
 
-            System.out.println("LOG: movie:  " + rowUpdate + " successfully updated");
+            System.out.println("LOG: movie: " + rowUpdate + " successfully updated");
 
         } catch (SQLException e) {
 
@@ -73,7 +75,7 @@ public class MovieDAOImpl implements MovieDAO {
 
             int rowDelete = preparedStatement.executeUpdate();
 
-            System.out.println("LOG: Movie:  " + rowDelete + " deleted!");
+            System.out.println("LOG: Movie: " + rowDelete + " deleted!");
 
         } catch (SQLException e) {
 
@@ -89,7 +91,7 @@ public class MovieDAOImpl implements MovieDAO {
             PreparedStatement preparedStatement = conn.prepareStatement(SqlQueryStorage.deleAllMovies);
             int rowDeleted = preparedStatement.executeUpdate();
 
-            System.out.println("LOG: All movies deleted!");
+            System.out.println("LOG: All " + rowDeleted + " movies deleted!");
 
         } catch (SQLException e) {
 
@@ -108,12 +110,17 @@ public class MovieDAOImpl implements MovieDAO {
 
             while (resultSet.next()) {
 
+                // TO BE FIXED
                 int id = resultSet.getInt("id"); // nomi delle colonne nel database!
                 String title = resultSet.getString("title");
                 String genre = resultSet.getString("genre");
-                // LocalDate dateRelease = resultSet.getDate("dateRelease");
+                LocalDate dateRelease = resultSet.getDate("dateRelease").toLocalDate();
 
-                tempMovie.add(new Movie(id, title, genre, null)); // convert DB item in a Java item
+                String pattern = "MM-dd-yyyy";
+                SimpleDateFormat df = new SimpleDateFormat(pattern);
+                String dateReleaseString = df.format(dateRelease);
+
+                tempMovie.add(new Movie(id, title, genre, dateReleaseString)); // convert DB item in a Java item
             }
         } catch (SQLException e) {
 
