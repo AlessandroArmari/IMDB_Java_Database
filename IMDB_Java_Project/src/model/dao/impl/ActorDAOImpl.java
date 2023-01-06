@@ -154,4 +154,22 @@ public class ActorDAOImpl implements ActorDAO {
 
     }
 
+    @Override
+    public void truncateAllActors() {
+
+        Connection conn = ConnectionManager.getConnection();
+
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(SqlQueryStorage.truncateAllActors);
+
+            preparedStatement.executeUpdate();
+
+            System.out.println("LOG: Table actor truncated");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }

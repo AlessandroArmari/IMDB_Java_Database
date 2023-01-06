@@ -7,15 +7,14 @@ public class SqlQueryStorage {
 
     // +++DDL+++
 
-    // +++rememeber to add the Schema+++
+    // +++rememeber to add the imdb Schema+++
+    // +++the SQL MUST BE CREATED in SQL before doing anything by JAVA+++
 
     public static final String createMovieTable = "CREATE TABLE IF NOT EXISTS imdb.movies (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, title VARCHAR(30), genre VARCHAR(30), dateRelease date);";
 
     public static final String createActorTable = "CREATE TABLE IF NOT EXISTS imdb.actors (id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, name VARCHAR(30), oscarWinner boolean)";
 
     // +++DML+++
-
-    // the schema imdb MUST BE CREATED manually in SQL before doing anything by JAVA
 
     // MOVIE QUERYS
     public static final String insertMovie = "INSERT INTO imdb.movies(title, genre, dateRelease) VALUES (?,?,?);";
@@ -27,6 +26,8 @@ public class SqlQueryStorage {
     public static final String deleAllMovies = "DELETE FROM imdb.movies;";
 
     public static final String updateMovie = "UPDATE imdb.movies SET title=?, genre=?, dateRelease=? WHERE id=?;";
+
+    public static final String truncateAllMovies = "TRUNCATE TABLE imdb.movies";
 
     // ACTOR QUERYS
 
@@ -41,4 +42,6 @@ public class SqlQueryStorage {
     public static final String updateActor = "UPDATE imdb.actors SET name=?, oscarWinner=? WHERE id=?;";
 
     public static final String updateActorByName = "UPDATE imdb.actors SET name=?, oscarWinner=? WHERE name=?;";
+
+    public static final String truncateAllActors = "TRUNCATE TABLE imdb.actors";
 }

@@ -7,8 +7,11 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // we use it to enstablish a connection to SQL
-        ConnectionManager connectionManager = new ConnectionManager();
+        ConnectionManager connectionManager = new ConnectionManager(); // we need :"new ConnectionManager()"
 
+        System.out.println("");
+        System.out.println("I am printing the RAM location of this variable: " + connectionManager);
+        System.out.println("");
         // Creating istance og the class IMDB
         IMDB imdb = new IMDB();
 
@@ -40,7 +43,7 @@ public class App {
         imdb.addActor(a3);
 
         // Updateing a movie
-        // First create a BrandNew (using costructo with ID)
+        // First create a BrandNew (using costructor with ID)
         Movie m4 = new Movie(34, "Updated_Movie", "Horror", "1999-11-28");
         // THEN UPDATE
 
@@ -83,6 +86,23 @@ public class App {
         System.out.println("");
 
         imdb.printAllActors();
+
+        System.out.println("");
+        System.out.println("+++TRUNCATE ACTOR TABLE+++");
+        System.out.println("");
+
+        // imdb.truncateActorTable();
+
+        // We use the "TRUNCATE TABLE" SQL command because it allows to erase the whole
+        // content of the table and "restore" the "id" to 0.
+        // That means that from now on every new element added will have an id
+        // starting from "0"
+
+        System.out.println("");
+        System.out.println("+++TRUNCATE MOVIE TABLE+++");
+        System.out.println("");
+
+        // imdb.truncateMovieTable();
 
     }
 }

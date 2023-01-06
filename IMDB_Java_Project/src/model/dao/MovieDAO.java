@@ -20,4 +20,6 @@ public interface MovieDAO {
 
     public List<Movie> getAll();
 
+    public void truncateAllMovies();
+
 }

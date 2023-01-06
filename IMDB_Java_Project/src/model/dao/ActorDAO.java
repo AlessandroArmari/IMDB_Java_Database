@@ -19,5 +19,7 @@ public interface ActorDAO {
 
     public void deleteAll();
 
-    List<Actor> getAll();
+    public List<Actor> getAll();
+
+    public void truncateAllActors();
 }

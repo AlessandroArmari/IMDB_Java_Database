@@ -51,6 +51,10 @@ public class IMDB {
         }
     }
 
+    public void truncateMovieTable() {
+        movieDAO.truncateAllMovies();
+    }
+
     // ACTOR METHODS
     public Actor addActor(Actor actor) {
         return actorDAO.save(actor);
@@ -81,6 +85,10 @@ public class IMDB {
         for (Actor a : getAllActors()) {
             System.out.println(a);
         }
+    }
+
+    public void truncateActorTable() {
+        actorDAO.truncateAllActors();
     }
 
 }

@@ -130,4 +130,22 @@ public class MovieDAOImpl implements MovieDAO {
         return tempMovie;
     }
 
+    @Override
+    public void truncateAllMovies() {
+
+        Connection conn = ConnectionManager.getConnection();
+
+        try {
+            PreparedStatement preparedStatement = conn.prepareStatement(SqlQueryStorage.truncateAllMovies);
+
+            preparedStatement.executeUpdate();
+
+            System.out.println("LOG: Table movie truncated");
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
