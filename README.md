@@ -15,7 +15,7 @@ I ALWAYS RECOMEND starting from "model" folder. Creating the main "classes" (Act
 1. We create constructors (2 of them), getter and setters
    (TRICK: right click on the background--->Source Action--->Generate Getters And Setters)
 
-![Alt text](.\screen\screen1.png?raw=true "Optional Title")
+![Alt text](IMDB_Java_Project\screen\screen1.png?raw=true "Optional Title")
 
 2. ActorDAO and MovieDAO are two interfaces--->they contain methods we will use in 'ActorDAOImpl.java' and 'MovieDAOImpl.java'
 
