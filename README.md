@@ -38,7 +38,7 @@ I ALWAYS RECOMEND starting from "model" folder. Creating the main "classes" (Act
    Then we use a Prepared Statement using method of SqlQueryStorage
    Then we "fill" the ? with parameteres taken by getters (actor.getName())
 
-![Alt text](screen\screen5.png?raw=true "Optional Title")
+![Alt text](screen5.png?raw=true "Optional Title")
 
 6. In DatabaseManager we create methods to cast the queries to create and erase tables in SQL
 
