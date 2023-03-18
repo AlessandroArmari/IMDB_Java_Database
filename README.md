@@ -15,7 +15,7 @@ I ALWAYS RECOMEND starting from "model" folder. Creating the main "classes" (Act
 1. We create constructors (2 of them), getter and setters
    (TRICK: right click on the background--->Source Action--->Generate Getters And Setters)
 
-![Alt text](screen\screen1.png?raw=true "Optional Title")
+![Alt text](.\screen\screen1.png?raw=true "Optional Title")
 
 2. ActorDAO and MovieDAO are two interfaces--->they contain methods we will use in 'ActorDAOImpl.java' and 'MovieDAOImpl.java'
 
@@ -30,7 +30,7 @@ I ALWAYS RECOMEND starting from "model" folder. Creating the main "classes" (Act
 4. In SqlQueryStorage.java we literally write down the MySQL queries we want to launch in Database.
    Where you can see "?" we will put some values in the next point.
 
-![Alt text](screen\screen4.png.png?raw=true "Optional Title")
+![Alt text](screen\screen4.png?raw=true "Optional Title")
 
 5. Finally we do the "core classes".
    The DAOimpl classes implent DAO classes ('public class ActorDAOImpl implements ActorDAO')
@@ -38,11 +38,11 @@ I ALWAYS RECOMEND starting from "model" folder. Creating the main "classes" (Act
    Then we use a Prepared Statement using method of SqlQueryStorage
    Then we "fill" the ? with parameteres taken by getters (actor.getName())
 
-![Alt text](screen\screen5.png.png?raw=true "Optional Title")
+![Alt text](screen\screen5.png?raw=true "Optional Title")
 
 6. In DatabaseManager we create methods to cast the queries to create and erase tables in SQL
 
-![Alt text](screen\screen6.png.png?raw=true "Optional Title")
+![Alt text](screen\screen6.png?raw=true "Optional Title")
 
 7. +++REMEMBER to create IMDB.java (business logic)+++
    In App.java we finally create movies ande actors using Java classes and methods.
