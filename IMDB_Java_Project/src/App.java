@@ -42,7 +42,7 @@ public class App {
         imdb.addActor(a2);
         imdb.addActor(a3);
 
-        // Updateing a movie
+        // Updating a movie
         // First create a BrandNew (using costructor with ID)
         Movie m4 = new Movie(34, "Updated_Movie", "Horror", "1999-11-28");
         // THEN UPDATE

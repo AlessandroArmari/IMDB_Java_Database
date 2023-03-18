@@ -4,8 +4,8 @@ import java.util.List;
 
 import model.Actor;
 
-//this is an interface. This means that
-//I will use theese empty methods in the class implementing this interface (ActorDAOImpl.java)
+//this is an interface. This means that I will use theese empty methods
+//in the class implementing this interface (ActorDAOImpl.java)
 
 public interface ActorDAO {
 
