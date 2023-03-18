@@ -25,7 +25,7 @@ I ALWAYS RECOMEND starting from "model" folder. Creating the main "classes" (Act
 
 +++REMEMBER TO USE YOUR MySQL USER and PASSWORD+++
 
-![Alt text](screen\screen3.png.png?raw=true "Optional Title")
+![Alt text](screen\screen3.png?raw=true "Optional Title")
 
 4. In SqlQueryStorage.java we literally write down the MySQL queries we want to launch in Database.
    Where you can see "?" we will put some values in the next point.
